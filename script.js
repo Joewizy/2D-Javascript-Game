@@ -52,24 +52,24 @@ const soundManager = {
 // =========================
 
 const playerImage = new Image();
-playerImage.src = 'shadow-dog.png';
+playerImage.src = '../images/shadow-dog.png';
 
 const backgroundLayer1 = new Image();
-backgroundLayer1.src = 'layer-1.png';
+backgroundLayer1.src = '../images/layer-1.png';
 const backgroundLayer2 = new Image();
-backgroundLayer2.src = 'layer-2.png';
+backgroundLayer2.src = '../images/layer-2.png';
 const backgroundLayer3 = new Image();
-backgroundLayer3.src = 'layer-3.png';
+backgroundLayer3.src = '../images/layer-3.png';
 const backgroundLayer4 = new Image();
-backgroundLayer4.src = 'layer-4.png';
+backgroundLayer4.src = '../images/layer-4.png';
 const backgroundLayer5 = new Image();
-backgroundLayer5.src = 'layer-5.png';
+backgroundLayer5.src = '../images/layer-5.png';
 
 const coinImage = new Image();
-coinImage.src = 'coin.png';
+coinImage.src = '../images/coin.png';
 
 const pain = new Image();
-pain.src = 'pain-meme.jpg';
+pain.src = '../images/pain-meme.jpg';
 
 // =========================
 // == Sprite Animation Setup
@@ -134,7 +134,7 @@ let enemiesArray = [];
 class Enemy {
     constructor(index) {
         this.image = new Image();
-        this.image.src = 'enemy2.png';
+        this.image.src = '../images/enemy2.png';
         this.spriteWidth = 266;
         this.spriteHeight = 188;
         this.width = this.spriteWidth / 3;
@@ -208,7 +208,7 @@ let ghostArray = [];
 class Ghost {
     constructor(index){
         this.image = new Image();
-        this.image.src = 'enemy-ghost.png';
+        this.image.src = '../images/enemy-ghost.png';
         this.ghostWidth = 261;
         this.ghostHeight = 209;
         this.width = this.ghostWidth / 3;
@@ -529,6 +529,7 @@ function animate() {
         ctx.font = '30px Arial';
         ctx.textAlign = 'center';
         ctx.fillText(`Your Score: ${score}`, CANVAS_WIDTH/2, CANVAS_HEIGHT/3);
+        ctx.fillText(`High Score: ${highScore}`, CANVAS_WIDTH/2, CANVAS_HEIGHT/3 + 140);
         ctx.fillText('Game Over', CANVAS_WIDTH/2, CANVAS_HEIGHT/3 + 50);
         ctx.fillText('Press Enter to RESTART', CANVAS_WIDTH/2, CANVAS_HEIGHT/3 + 100);
         return;
@@ -615,7 +616,6 @@ function animate() {
         ghostArray.push(ghost);
     }
     
-// Replace the coin collection logic with this:
 coinsArray.forEach((coin) => {
     coin.update();
     coin.draw();
@@ -668,6 +668,10 @@ coinsArray.forEach((coin) => {
 }
 
 function resetGame() {
+    ctx.textAlign = 'start'; 
+    ctx.fillStyle = 'black'; 
+    ctx.font = '24px Arial'; 
+
     soundManager.stopAll();
     soundManager.play('roll');
     gameOver = false;
