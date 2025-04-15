@@ -616,6 +616,7 @@ function animate() {
         ghostArray.push(ghost);
     }
     
+
 coinsArray.forEach((coin) => {
     coin.update();
     coin.draw();
@@ -628,7 +629,7 @@ coinsArray.forEach((coin) => {
         score += 10;
         totalCoinsCollected++; 
         
-        if (totalCoinsCollected >= 100) {
+        if (totalCoinsCollected >= 10) {
             numberOfRolls++;
             totalCoinsCollected = 0; 
             soundManager.play('check');
