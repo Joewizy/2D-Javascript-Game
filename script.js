@@ -463,6 +463,10 @@ canvas.addEventListener('click', function(event) {
 // == Utility Functions
 // =========================
 
+function updateLeaderboard() {
+    document.getElementById('player-high-score').textContent = highScore;
+}
+
 function checkCollision(rect1, rect2) {
     return (
         rect1.x < rect2.x + rect2.width &&
@@ -627,6 +631,7 @@ coinsArray.forEach((coin) => {
         soundManager.play('coin');
         coin.collected = true;
         score += 10;
+        // updatePlayerScore(score) function from my smart contract something like that yeah and is this the best way to do it?
         totalCoinsCollected++; 
         
         if (totalCoinsCollected >= 10) {
@@ -638,6 +643,7 @@ coinsArray.forEach((coin) => {
         if (score > highScore) {
             highScore = score;
             localStorage.setItem('highScore', highScore);
+            updateLeaderboard();
         }
         
         if (defaultSpeed < 6) {

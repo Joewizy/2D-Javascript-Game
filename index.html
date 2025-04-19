@@ -8,19 +8,39 @@
 </head>
 <body>
     <canvas id="canvas1"></canvas>
-    
-    <div class="controls">
-        <h3>Controls</h3>
-        <div class="control">
-            <span class="key">↑</span> Jump (press twice to double jump)
-        </div>
-        <div class="control">
-            <span class="key">↑→</span> Jump right
-        </div>
-        <div class="control">
-            <span class="key">↓</span> Roll to destroy enemies
-        </div>
+
+    <div class="panel leaderboard">
+      <h3>LEADERBOARD</h3>
+      <div class="score">
+        <span class="score-name">Player1</span>
+        <span class="score-value">1250</span>
+      </div>
+      <div class="score">
+        <span class="score-name">Player2</span>
+        <span class="score-value">980</span>
+      </div>
+      <div class="score">
+        <span class="score-name">Player3</span>
+        <span class="score-value">750</span>
+      </div>
+      <div class="score player-row">
+        <span class="score-name">YOU</span>
+        <span id="player-high-score" class="score-value">0</span>
+      </div>
     </div>
+    
+    <div class="panel controls">
+      <h3>CONTROLS</h3>
+      <div class="control">
+        <span class="key">↑</span> Jump (double tap for double jump)
+      </div>
+      <div class="control">
+        <span class="key">↑→</span> Jump right
+      </div>
+      <div class="control">
+        <span class="key">↓</span> Roll to destroy enemies
+      </div>
+    </div>    
 
     <script src="script.js"></script>
 </body>

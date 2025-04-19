@@ -1,6 +1,6 @@
 # 2D Javascript Game
 
-A 2d game built using html , css and javascript
+A 2d game built using html , css and javascript with on-chain high score tracking using blockchain technology.
 
 ## Features
 
